@@ -1,0 +1,140 @@
+Tokenizer : Using API  -->> converts words into integer tokens   ---->> oov_token = "<OOV>" for unseen words and sets by defualt value=1;
+
+
+fit_on_texts(sentences)
+
+Text to sequence -->> texts_to_sequences() --->>> Sentences to list of tokens of 2D array.
+
+Padding : -->>pad_sequences()  ---->>>> Converts 2d_array sequence to padded 2D_array sequence  -->>by default padding is done in beginning i.e. pre-->>> padding='post' --> maxlen=5 (i.e. max array's width/no.of column) --> thus we may lose information by defeault from beginning column but can set to last via -->> truncating = 'post' 
+
+
+
+
+
+
+https://rishabhmisra.github.io/publications/
+
+
+
+http://ai.stanford.edu/~amaas/data/sentiment/    --- imdb review    
+
+
+
+
+subword text encoder  /// when we use subwords , then sequence is important
+
+
+
+RNN --> for sequence of features 
+
+LSTM  --->> RNN with cell state memory  -->> in order to remember context of sentence -->>  may be biderctional ---->>>>tf.kereas.layers.Bidirectional(tf.layers.LSTM(no.of output))-->>give  argument returnsequence =True if we coonect two LSTM with each other.   --->>> 2 Layer LSTM
+
+
+
+Convolution network also can be used here in place of LSTM
+
+GRU -->>>> tf.kereas.layers.Bidirectional(tf.layers.GRU(no.of output)
+
+
+
+
+
+one hot encoding of labels.
+
+
+irish poetry link:      https://storage.googleapis.com/laurencemoroney-blog.appspot.com/irish-lyrics-eof.txt
+
+
+
+character based sequence models ::    https://www.tensorflow.org/tutorials/text/text_generation  --->>>> predict next character when type any character as earlier we learnt predict next word when we type any word.
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------
+Summary -->>> text to class prediction --->>> eg. IMDB review(positive/negative)  
+		--->>>  LSTM/GRU  ---->>>sequence models -->>> previous sequence of words/text to next word/char  --... eg. keyboard typing --->>>> sequence is important
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+
+If you don’t use a token for out of vocabulary words, what happens at encoding?
+skips 
+
+
+
+
+embedding dimension?
+no of dimension for vector representing the word encoding
+
+
+To use word embeddings in TensorFlow, in a sequential layer, what is the name of the class?
+tf.keras.layers.Embedding
+
+
+n_words = n --->>> max no of most common words to be tokenized 
+
+
+
+
+
+
+There are three kinds of classification tasks:
+    Binary classification: two exclusive classes
+    Multi-class classification: more than two exclusive classes
+    Multi-label classification: just non-exclusive classes
+Here, we can say
+    In the case of (1), you need to use binary cross entropy.
+    In the case of (2), you need to use categorical cross entropy.
+    In the case of (3), you need to use binary cross entropy.
+
+
+
+
+
+
+
+
+
+
+How do Recurrent Neural Networks help you understand the impact of sequence on meaning?
+they carry meaning from one cell to another
+
+
+
+
+How does an LSTM help understand meaning when words that qualify each other aren’t necessarily beside each other in a sentence?
+values from earlier words can be carried to later ones via cell state
+
+
+
+What keras layer type allows LSTMs to look forward and backward in a sentence?
+BiDirectional
+
+
+
+What’s the output shape of a bidirectional LSTM layer with 64 units?
+(None, 128)
+
+
+
+If a sentence has 120 tokens in it, and a Conv1D with 128 filters with a Kernal size of 5 is passed over it, what’s the output shape?
+(None, 116,128)
+
+
+
+
+
+What is a major drawback of word-based training for text generation instead of character-based generation?
+becoz far more words in corpus in comparison of chars so it is memory intensive.
+
+
+
+

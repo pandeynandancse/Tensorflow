@@ -1,0 +1,127 @@
+Topics:
+	Convolution
+	Pooling
+	Dropouts
+	Image augmentation
+	Image Normalization
+	Freezing Layer
+	Transfer Learning
+
+
+
+
+
+
+
+
+
+
+
+If my Image is sized 150x150, and I pass a 3x3 Convolution over it, what size is the resulting image?
+148*148
+
+
+
+If my data is sized 150x150, and I use Pooling of size 2x2, what size will the resulting image be?
+75*75
+
+
+
+If I want to view the history of my training, how can I access it?
+
+
+
+
+
+What’s the name of the API that allows you to inspect the impact of convolutions on the images?
+model.layers
+
+
+
+
+
+
+                                                          Augmentation
+
+
+How do you use Image Augmentation in TensorFLow
+using parameters to imagedatagenerator
+
+
+
+
+If my training data only has people facing left, but I want to classify people facing right, how would I avoid overfitting?
+horizontal-flip
+
+
+
+When training with augmentation, you noticed that the training is a little slower. Why?
+image processing takes cycles
+
+
+
+
+
+What does the fill_mode parameter do?
+recreates lost information after transformation like shear
+
+
+
+When using Image Augmentation with the ImageDataGenerator, what happens to your raw image data on-disk.
+nothing,augmentation is done in memory
+
+
+
+
+How does Image Augmentation help solve overfitting?
+manipulates training data sets to get more scenario over features
+
+
+
+How did you lock or freeze a layer from retraining?
+layer.trainable =false
+
+
+																
+
+
+
+
+
+														Transfer Learning
+
+
+TL is pre trained features/layers that are frozen.
+
+
+How do you change the number of classes the model can classify when using transfer learning?
+when u specify ur DNN at bottom of network , u specify ur output layer with number of classes
+
+
+
+Can you use Image Augmentation with Transfer Learning Models?
+yes
+
+
+
+Why do dropouts help avoid overfitting?
+becoz neighbour neurons can have same weights
+
+
+
+
+code for adding Dropout of 20% of neurons using TensorFlow
+tf.keras.layers.Dropout(0.2)
+
+
+
+convolution -- technique to extract features from image
+
+
+What method on an ImageGenerator is used to normalize the image? 
+rescale
+
+
+
+When training for multiple classes what is the Class Mode for Image Augmentation?
+class_mode='Categorical'
